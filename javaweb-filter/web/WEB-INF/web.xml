@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+
+    <servlet>
+        <servlet-name>login</servlet-name>
+        <servlet-class>servlet.loginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>login</servlet-name>
+        <url-pattern>/servlet/login</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>logout</servlet-name>
+        <servlet-class>servlet.logoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>logout</servlet-name>
+        <url-pattern>/servlet/logout</url-pattern>
+    </servlet-mapping>
+
+
+
+
+
+
+
+    <servlet>
+        <servlet-name>show</servlet-name>
+        <servlet-class>servlet.showServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>show</servlet-name>
+        <url-pattern>/servlet/show</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>show</servlet-name>
+        <url-pattern>/show</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>encoding</filter-name>
+        <filter-class>filter.CharacterEncodingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>encoding</filter-name>
+        <url-pattern>/servlet/*</url-pattern>
+    </filter-mapping>
+
+    <listener>
+        <listener-class>listener.countListener</listener-class>
+    </listener>
+
+    <session-config>
+        <session-timeout>1</session-timeout>
+    </session-config>
+
+
+    <filter>
+        <filter-name>sys</filter-name>
+        <filter-class>filter.loginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>sys</filter-name>
+        <url-pattern>/sys/*</url-pattern>
+    </filter-mapping>
+
+</web-app>
